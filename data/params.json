@@ -1,0 +1,132 @@
+{
+  "USDTWD": {
+    "params": {
+      "horizon": 10,
+      "l2": 0.03,
+      "buy_margin": 0.07,
+      "lr": 0.05,
+      "epochs": 300,
+      "min_train": 250,
+      "retrain_every": 20,
+      "cost_bps": 2.0
+    },
+    "tuned_at": "2026-11-10",
+    "report": {
+      "tuned_on": {
+        "n": 882,
+        "samples": 1369,
+        "hit": 0.5657596371882087,
+        "mean_ret": 0.0014019630658291013,
+        "sharpe": 0.7589175297420586,
+        "score": 0.04163617881447526,
+        "base_up": 0.5098612125639153
+      },
+      "tried": 27,
+      "reason": "手動要求"
+    }
+  },
+  "EURUSD": {
+    "params": {
+      "horizon": 5,
+      "l2": 3.0,
+      "buy_margin": 0.04,
+      "lr": 0.05,
+      "epochs": 300,
+      "min_train": 250,
+      "retrain_every": 20,
+      "cost_bps": 2.0
+    },
+    "tuned_at": "2026-11-10",
+    "report": {
+      "tuned_on": {
+        "n": 338,
+        "samples": 1369,
+        "hit": 0.6153846153846154,
+        "mean_ret": 0.00179539087908673,
+        "sharpe": 1.2130635069459972,
+        "score": 0.033007859702550296,
+        "base_up": 0.4974433893352812
+      },
+      "tried": 27,
+      "reason": "手動要求"
+    }
+  },
+  "USDJPY": {
+    "params": {
+      "horizon": 10,
+      "l2": 3.0,
+      "buy_margin": 0.07,
+      "lr": 0.05,
+      "epochs": 300,
+      "min_train": 250,
+      "retrain_every": 20,
+      "cost_bps": 2.0
+    },
+    "tuned_at": "2026-11-10",
+    "report": {
+      "tuned_on": {
+        "n": 36,
+        "samples": 1369,
+        "hit": 0.5833333333333334,
+        "mean_ret": 0.003899715588059369,
+        "sharpe": 0.8352383747614065,
+        "score": 0.023398293528356214,
+        "base_up": 0.5865595325054784
+      },
+      "tried": 27,
+      "reason": "手動要求"
+    }
+  },
+  "GBPUSD": {
+    "params": {
+      "horizon": 10,
+      "l2": 3.0,
+      "buy_margin": 0.07,
+      "lr": 0.05,
+      "epochs": 300,
+      "min_train": 250,
+      "retrain_every": 20,
+      "cost_bps": 2.0
+    },
+    "tuned_at": "2026-11-10",
+    "report": {
+      "tuned_on": {
+        "n": 41,
+        "samples": 1369,
+        "hit": 0.5365853658536586,
+        "mean_ret": 0.010645647144352169,
+        "sharpe": 1.7076940897748527,
+        "score": 0.06816540125315916,
+        "base_up": 0.5105916727538349
+      },
+      "tried": 27,
+      "reason": "手動要求"
+    }
+  },
+  "USDCHF": {
+    "params": {
+      "horizon": 10,
+      "l2": 3.0,
+      "buy_margin": 0.04,
+      "lr": 0.05,
+      "epochs": 300,
+      "min_train": 250,
+      "retrain_every": 20,
+      "cost_bps": 2.0
+    },
+    "tuned_at": "2026-11-10",
+    "report": {
+      "tuned_on": {
+        "n": 30,
+        "samples": 1369,
+        "hit": 0.6666666666666666,
+        "mean_ret": 0.00806672122790848,
+        "sharpe": 2.4038746551664083,
+        "score": 0.04418325181631246,
+        "base_up": 0.45361577794010227
+      },
+      "tried": 27,
+      "reason": "手動要求"
+    }
+  }
+}

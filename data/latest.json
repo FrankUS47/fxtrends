@@ -1,0 +1,252 @@
+{
+  "generated": "2026-11-11 06:41",
+  "pairs": {
+    "USDTWD": {
+      "label": "USD/TWD (美金/台幣)",
+      "price": 32.937,
+      "bar_date": "2026-11-10",
+      "proba": 0.343532,
+      "score": 34.4,
+      "action": "SELL",
+      "horizon": 10,
+      "levels": {
+        "close": 32.937,
+        "atr": 0.265379,
+        "pivot": {
+          "P": 32.902667,
+          "R1": 33.076333,
+          "S1": 32.763334,
+          "R2": 33.215666,
+          "S2": 32.589667
+        },
+        "resistance": 33.467758,
+        "resistance_touches": 0,
+        "support": 31.746234,
+        "support_touches": 3
+      },
+      "stats": {
+        "fit": {
+          "n": 882,
+          "samples": 1369,
+          "hit": 0.56576,
+          "mean_ret": 0.001402,
+          "sharpe": 0.758918,
+          "score": 0.041636,
+          "base_up": 0.509861
+        },
+        "holdout": {
+          "n": 301,
+          "samples": 577,
+          "hit": 0.51495,
+          "mean_ret": -0.000253,
+          "sharpe": -0.088212,
+          "score": -0.004389,
+          "base_up": 0.577123
+        },
+        "live": {
+          "n": 0,
+          "hit_all": null,
+          "n_recent": 0,
+          "hit_recent": null
+        }
+      }
+    },
+    "EURUSD": {
+      "label": "EUR/USD (歐元/美金)",
+      "price": 1.116819,
+      "bar_date": "2026-11-10",
+      "proba": 0.508779,
+      "score": 50.9,
+      "action": "HOLD",
+      "horizon": 5,
+      "levels": {
+        "close": 1.116819,
+        "atr": 0.0071,
+        "pivot": {
+          "P": 1.119045,
+          "R1": 1.12314,
+          "S1": 1.112725,
+          "R2": 1.12946,
+          "S2": 1.108631
+        },
+        "resistance": 1.147506,
+        "resistance_touches": 2,
+        "support": 1.111179,
+        "support_touches": 2
+      },
+      "stats": {
+        "fit": {
+          "n": 338,
+          "samples": 1369,
+          "hit": 0.615385,
+          "mean_ret": 0.001795,
+          "sharpe": 1.213064,
+          "score": 0.033008,
+          "base_up": 0.497443
+        },
+        "holdout": {
+          "n": 0,
+          "samples": 582,
+          "hit": null,
+          "mean_ret": null,
+          "score": -1000000000.0,
+          "base_up": 0.484536
+        },
+        "live": {
+          "n": 0,
+          "hit_all": null,
+          "n_recent": 0,
+          "hit_recent": null
+        }
+      }
+    },
+    "USDJPY": {
+      "label": "USD/JPY (美金/日圓)",
+      "price": 158.701004,
+      "bar_date": "2026-11-10",
+      "proba": 0.492948,
+      "score": 49.3,
+      "action": "HOLD",
+      "horizon": 10,
+      "levels": {
+        "close": 158.701004,
+        "atr": 0.972474,
+        "pivot": {
+          "P": 158.472,
+          "R1": 159.080002,
+          "S1": 158.093002,
+          "R2": 159.459,
+          "S2": 157.485001
+        },
+        "resistance": 159.145752,
+        "resistance_touches": 4,
+        "support": 157.823502,
+        "support_touches": 4
+      },
+      "stats": {
+        "fit": {
+          "n": 36,
+          "samples": 1369,
+          "hit": 0.583333,
+          "mean_ret": 0.0039,
+          "sharpe": 0.835238,
+          "score": 0.023398,
+          "base_up": 0.58656
+        },
+        "holdout": {
+          "n": 0,
+          "samples": 577,
+          "hit": null,
+          "mean_ret": null,
+          "score": -1000000000.0,
+          "base_up": 0.592721
+        },
+        "live": {
+          "n": 0,
+          "hit_all": null,
+          "n_recent": 0,
+          "hit_recent": null
+        }
+      }
+    },
+    "GBPUSD": {
+      "label": "GBP/USD (英鎊/美金)",
+      "price": 1.334401,
+      "bar_date": "2026-11-10",
+      "proba": 0.506752,
+      "score": 50.7,
+      "action": "HOLD",
+      "horizon": 10,
+      "levels": {
+        "close": 1.334401,
+        "atr": 0.008515,
+        "pivot": {
+          "P": 1.337213,
+          "R1": 1.343046,
+          "S1": 1.328568,
+          "R2": 1.351692,
+          "S2": 1.322735
+        },
+        "resistance": 1.346888,
+        "resistance_touches": 5,
+        "support": 1.327415,
+        "support_touches": 6
+      },
+      "stats": {
+        "fit": {
+          "n": 41,
+          "samples": 1369,
+          "hit": 0.536585,
+          "mean_ret": 0.010646,
+          "sharpe": 1.707694,
+          "score": 0.068165,
+          "base_up": 0.510592
+        },
+        "holdout": {
+          "n": 0,
+          "samples": 577,
+          "hit": null,
+          "mean_ret": null,
+          "score": -1000000000.0,
+          "base_up": 0.493934
+        },
+        "live": {
+          "n": 0,
+          "hit_all": null,
+          "n_recent": 0,
+          "hit_recent": null
+        }
+      }
+    },
+    "USDCHF": {
+      "label": "USD/CHF (美金/瑞郎)",
+      "price": 0.82461,
+      "bar_date": "2026-11-10",
+      "proba": 0.49158,
+      "score": 49.2,
+      "action": "HOLD",
+      "horizon": 10,
+      "levels": {
+        "close": 0.82461,
+        "atr": 0.006424,
+        "pivot": {
+          "P": 0.822927,
+          "R1": 0.828483,
+          "S1": 0.819053,
+          "R2": 0.832357,
+          "S2": 0.813497
+        },
+        "resistance": 0.838835,
+        "resistance_touches": 2,
+        "support": 0.82317,
+        "support_touches": 1
+      },
+      "stats": {
+        "fit": {
+          "n": 30,
+          "samples": 1369,
+          "hit": 0.666667,
+          "mean_ret": 0.008067,
+          "sharpe": 2.403875,
+          "score": 0.044183,
+          "base_up": 0.453616
+        },
+        "holdout": {
+          "n": 0,
+          "samples": 577,
+          "hit": null,
+          "mean_ret": null,
+          "score": -1000000000.0,
+          "base_up": 0.507799
+        },
+        "live": {
+          "n": 0,
+          "hit_all": null,
+          "n_recent": 0,
+          "hit_recent": null
+        }
+      }
+    }
+  },
+  "errors": {}
+}
