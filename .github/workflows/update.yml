@@ -1,0 +1,83 @@
+name: update-fx-trend
+
+on:
+  schedule:
+    - cron: "*/5 * * * 0-5"    # 週日至週五每 5 分鐘（UTC；外匯週日晚開盤、週五晚收盤）。GitHub 排程為盡力而為，可能延遲
+  workflow_dispatch:           # 可在 Actions 頁面手動執行
+    inputs:
+      retune:
+        description: "強制重新調參"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write              # 回寫 data/（預測紀錄、參數）
+  pages: write                 # 部署 GitHub Pages
+  id-token: write
+
+concurrency:
+  group: update-fx-trend
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # 原始價格快取（不進 git）：下載失敗時可沿用，並做增量更新
+      - uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: raw-${{ github.run_id }}
+          restore-keys: raw-
+
+      - name: Run tests
+        if: github.event_name != 'schedule'
+        run: python -m unittest discover -s tests -v
+
+      - name: Update data, retrain, rebuild page
+        run: python run.py update ${{ inputs.retune && '--retune' || '' }}
+
+      # 預測紀錄與參數每小時存回 repo 一次（避免每 5 分鐘一個 commit）
+      - name: Check whether to commit
+        id: hour
+        run: |
+          m=$(date -u +%M)
+          if [ "${{ github.event_name }}" != "schedule" ] || [ "$m" -lt 10 ]; then echo "go=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Commit data
+        if: steps.hour.outputs.go == 'true'
+        run: |
+          git config user.name "fx-trend-bot"
+          git config user.email "fx-trend-bot@users.noreply.github.com"
+          git add data/predictions.csv data/params.json data/latest.json
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "data $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            git push
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
